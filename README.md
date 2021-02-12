@@ -24,7 +24,7 @@ Cамая большая и неожиданная проблема, с кото
 Открыть папку проекта через терминал. Набрать команду “pod init”
 Создатся Pod файл, открыть его и заменить его содержимое на следующее:
 
-# Uncomment the next line to define a global platform for your project
+
 platform :ios, '11.0'
 
 target 'WeatherAppFirecode' do
