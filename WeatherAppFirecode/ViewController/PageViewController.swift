@@ -22,7 +22,7 @@ class PageViewController: UIPageViewController {
         setViewControllers([createLocationDetailViewController(forPage: 0)] , direction: .forward, animated: false, completion: nil)
 
     }
-    
+// MARK: load locations from UserDefaults, If we dont have any data, we create 1 item in WeatherLocatons, because we must have at least one page at index = 0, this is city page, which data we receive with Core Location(my city data)
     func loadLocations() {
         guard let locationsEncoded = UserDefaults.standard.value(forKey: "weatherLocations") as? Data else {
             print("Can not load Data from UserDefaults")
@@ -35,7 +35,7 @@ class PageViewController: UIPageViewController {
         } else {
             print("ERROR: can not decode Data from UserDefaults")
         }
-        
+// MARK: check for that, because we must have at least one page at index = 0, this is city page, which data we receive with Core Location(my city data)
         if weatherLocations.isEmpty {
             weatherLocations.append(WeatherLocation(name: "Current Location", latitude: 00.00, longitude: 00.00))
         }
@@ -47,7 +47,7 @@ class PageViewController: UIPageViewController {
         return detailViewController
     }
 }
-
+// MARK: page View controller extensions
 extension PageViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource{
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         if let currentViewController = viewController as? LocationDetailViewController{

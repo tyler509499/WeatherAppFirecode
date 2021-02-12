@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: struct fo save JSON in UserDefaults
 class WeatherLocation: Codable {
     var name: String
     var latitude: Double

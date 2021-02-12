@@ -31,6 +31,7 @@ extension LocationListViewController: UITableViewDelegate, UITableViewDataSource
         weatherLocations.remove(at: sourceIndexPath.row)
         weatherLocations.insert(itemToMove, at: destinationIndexPath.row)
     }
+// MARK: this 2 next funcs about to make Durable the first city row
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return indexPath.row != 0 ? true : false
     }

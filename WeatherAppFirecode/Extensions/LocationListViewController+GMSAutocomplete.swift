@@ -12,6 +12,7 @@ extension LocationListViewController: GMSAutocompleteViewControllerDelegate {
 
   func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
 
+// MARK: new location in LocationListViewController by GooglePlaces
     let newLocation = WeatherLocation(name: place.name ?? "unknown place", latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
     weatherLocations.append(newLocation)
     tableView.reloadData()

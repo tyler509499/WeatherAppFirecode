@@ -7,6 +7,7 @@
 
 import UIKit
 
+// MARK: basic alert controller func
 extension UIViewController {
     func oneButtonAlert(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)

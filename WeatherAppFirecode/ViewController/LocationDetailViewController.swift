@@ -8,6 +8,7 @@
 import UIKit
 import CoreLocation
 
+// MARK: date formatter for current temp
 private let dateFormatter: DateFormatter = {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "EEEE, MMM d"
@@ -47,10 +48,7 @@ class LocationDetailViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        
-        
         updateUserInterface()
-        
     }
     
    
@@ -64,7 +62,7 @@ class LocationDetailViewController: UIViewController {
     }
     
     
-    
+// MARK: pageView controller update interface
     func updateUserInterface(){
         
         let pageViewController = UIApplication.shared.windows.first!.rootViewController as! PageViewController
@@ -89,13 +87,15 @@ class LocationDetailViewController: UIViewController {
             }
         }
     }
-    
+  
+// MARK: prepare for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! LocationListViewController
         let pageViewController = UIApplication.shared.windows.first!.rootViewController as! PageViewController
         destination.weatherLocations = pageViewController.weatherLocations
     }
-    
+   
+// MARK: unwind segue
     @IBAction  func unwindFromLocationListViewController(segue: UIStoryboardSegue) {
         let source = segue.source as! LocationListViewController
         locationIndex = source.selectedLocationIndex
@@ -106,7 +106,7 @@ class LocationDetailViewController: UIViewController {
         pageViewController.setViewControllers([pageViewController.createLocationDetailViewController(forPage: locationIndex)], direction: .forward, animated: false, completion: nil)
         
     }
-    
+// MARK: move pages action
     @IBAction func pageControlTapped(_ sender: UIPageControl) {
         let pageViewController = UIApplication.shared.windows.first!.rootViewController as! PageViewController
         

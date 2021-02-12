@@ -14,7 +14,8 @@ class DailyTableViewCell: UITableViewCell {
     @IBOutlet weak var dailyHighLabel: UILabel!
     @IBOutlet weak var dailySummaryView: UITextView!
     @IBOutlet weak var dailyLowLabel: UILabel!
-    
+  
+// MARK: didSet to set data in cell elements
     var dailyWeather: DailyWeather! {
         didSet {
             dailyImageView.image = UIImage(systemName: dailyWeather.dailyIcon)
