@@ -37,4 +37,6 @@ end
 Затем снова открыть терминал с папкой проекта и набрать команду “pod install”
 5)	API ключи находятся в папке Constants/APIKeys
 6)	запускаем файл с расширением OpenWeatherAppFirecode.workspace
+
+
 bundle Identifier может понадобится или нет - com.NikitaGalkov.WeatherAppFirecode, в первые работал с Google Places просто
