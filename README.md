@@ -11,10 +11,5 @@ JSON, который мы получаем по запросу с OpenWeather п
 Модель Model/WeatherLocation.swift хранится в виде JSON в UserDefaults, этот JSON парсится в контроллере PageViewController
 Запрос на OpenWeather представлен в Model/WeatherDetail.swift в func getData(completed: @escaping…….
 
-
-Затем снова открыть терминал с папкой проекта и набрать команду “pod install”
-5)	API ключи находятся в папке Constants/APIKeys
-6)	запускаем файл с расширением OpenWeatherAppFirecode.workspace
-
-
-bundle Identifier может понадобится или нет - com.NikitaGalkov.WeatherAppFirecode, в первые работал с Google Places просто
+pod init
+pod install
